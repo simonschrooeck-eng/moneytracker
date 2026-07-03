@@ -11,25 +11,38 @@
   <nav class="navbar bg-primary" data-bs-theme="dark">
     <div class="container-fluid">
       <span class="navbar-brand mb-0 h1">MoneyTracker</span>
+      <button id="logout" class="btn btn-light d-none">Log out</button>
     </div>
   </nav>
 
   <div class="container py-4" style="max-width: 640px;">
-    <div class="card mx-auto" style="max-width: 380px;">
-      <div class="card-body">
-        <div class="mb-3">
-          <label for="email" class="form-label">Email address:</label>
-          <input type="email" class="form-control" id="email" placeholder="John.Doe@thws.de">
-        </div>
-        <div class="mb-3">
-          <label for="password" class="form-label">Password:</label>
-          <input type="password" class="form-control" id="password" placeholder="password">
-        </div>
-        <div class="text-center">
-          <button id="login" class="btn btn-primary">Login</button>
+
+    <!-- Login-Ansicht -->
+    <div id="loginView">
+      <div class="card mx-auto" style="max-width: 380px;">
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address:</label>
+            <input type="email" class="form-control" id="email" placeholder="John.Doe@thws.de">
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" class="form-control" id="password" placeholder="password">
+          </div>
+          <div class="text-center">
+            <button id="login" class="btn btn-primary">Login</button>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- Main-Ansicht (anfangs versteckt) -->
+    <div id="mainView" class="d-none">
+      <div class="card">
+        <div class="card-body">ToDo!</div>
+      </div>
+    </div>
+
   </div>
 
   <script src="js/main.js"></script>
