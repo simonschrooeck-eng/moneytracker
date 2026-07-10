@@ -28,7 +28,21 @@ logoutButton.addEventListener("click", function () {
   logoutButton.classList.add("d-none");
 });
 
-// Absenden
+// Absenden: neuen Eintrag erstellen (ÜA7)
 submitButton.addEventListener("click", function () {
-  // TODO (ÜA7): Eintrag aus dem Formular auslesen und zum BalancePoint hinzufügen
+  // 1. Werte aus dem Formular auslesen
+  const description = document.getElementById("description").value;
+  const isIncome = document.getElementById("income").checked;
+  const amount = parseFloat(document.getElementById("amount").value);
+  const date = document.getElementById("date").value;
+
+  // 2. BalanceItem erstellen
+  const item = new BalanceItem(description, isIncome, amount, date);
+
+  // 3. Zum BalancePoint hinzufügen
+  balancePoint.add(item);
+
+  // 4. Konsolenausgabe (wie in ÜA7 gefordert)
+  console.log("Alle Einträge:", balancePoint.items);
+  console.log("Kontostand:", balancePoint.getBalance().toFixed(2), "€");
 });
